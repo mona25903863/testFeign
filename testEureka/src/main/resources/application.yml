@@ -1,0 +1,21 @@
+#set service port
+server:
+  port: 1111
+
+#set application name
+spring:
+  application:
+    name: eureka-service
+
+#正常服务中心不需要注册自己，本示例注册中心和provider写到了一起，需要注册
+#注册中心不需要发现服务
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+
+

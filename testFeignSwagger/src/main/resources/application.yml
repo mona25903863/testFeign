@@ -1,0 +1,18 @@
+server:
+  port: 7090
+
+spring:
+  application:
+    name: feign-consumer-swagger
+
+ribbon:
+  eureka:
+    enabled: false
+
+calculate:
+  ribbon:
+    listOfServers: localhost:7070
+
+logging:
+  level:
+    org.apache.http: trace
